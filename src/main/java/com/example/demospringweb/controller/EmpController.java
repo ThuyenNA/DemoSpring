@@ -17,7 +17,7 @@ public class EmpController {
         return departmentService.getDepts();
     }
 
-    @RequestMapping(value = "/emps",  method = RequestMethod.POST)
+    @RequestMapping(value = "/emps", method = RequestMethod.POST)
     public void addDept(@RequestBody Emp dept){
         departmentService.addDept(dept);
     }
