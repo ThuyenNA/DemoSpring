@@ -1,7 +1,7 @@
 package com.example.demospringweb.controller;
 
 import com.example.demospringweb.model.Emp;
-import com.example.demospringweb.service.DepartmentService;
+import com.example.demospringweb.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class EmpController {
     @Autowired
-    private DepartmentService departmentService;
+    private EmpService departmentService;
 
     @RequestMapping("/emps")
     public List<Emp> getDepts(){
@@ -34,6 +34,6 @@ public class EmpController {
 
     @RequestMapping(value = "/emps/{id}", method = RequestMethod.PUT)
     public void updateDept(@PathVariable Integer id, @RequestBody Emp dept){
-        departmentService.updateDept(id,dept);
+        departmentService.updateDept(id,dept) ;
     }
 }
