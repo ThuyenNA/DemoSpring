@@ -35,5 +35,6 @@ public class EmpController {
     @RequestMapping(value = "/emps/{id}", method = RequestMethod.PUT)
     public void updateDept(@PathVariable Integer id, @RequestBody Emp dept){
         departmentService.updateDept(id, dept);
+
     }
 }
