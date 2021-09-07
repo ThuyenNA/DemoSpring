@@ -1,7 +1,7 @@
 package com.example.demospringweb.service;
 
-import com.example.demospringweb.model.Department;
-import com.example.demospringweb.repository.DepartmentRepository;
+import com.example.demospringweb.model.Emp;
+import com.example.demospringweb.repository.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,17 +10,17 @@ import java.util.List;
 @Service
 public class DepartmentService {
     @Autowired
-    private DepartmentRepository departmentRepository;
+    private EmpRepository departmentRepository;
 
-    public List<Department> getDepts(){
+    public List<Emp> getDepts(){
         return departmentRepository.findAll();
     }
 
-    public void addDept(Department dept){
+    public void addDept(Emp dept){
         departmentRepository.save(dept);
     }
 
-    public Department getOneDept(Integer id){
+    public Emp getOneDept(Integer id){
         return departmentRepository.findById(id).get();
     }
 
@@ -28,7 +28,7 @@ public class DepartmentService {
         departmentRepository.deleteById(id);
     }
 
-    public void updateDept(Integer id, Department dept){
+    public void updateDept(Integer id, Emp dept){
         departmentRepository.save(dept);
     }
 }
